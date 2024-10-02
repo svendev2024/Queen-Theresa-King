@@ -1,0 +1,17 @@
+.drop-menu {
+  display: none;
+}
+
+@media (max-width: 922px) {
+  .top-header {
+    display: none;
+  }
+}
+@media (max-width: 1154px) {
+  .nav-bar {
+    display: none;
+  }
+  .drop-menu {
+    display: flex
+  }
+}

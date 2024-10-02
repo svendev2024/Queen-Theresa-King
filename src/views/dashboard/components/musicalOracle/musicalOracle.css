@@ -1,0 +1,29 @@
+@media (max-width: 986px) {
+  .oracle-dash {
+    flex-direction: column !important;
+  }
+  .oracle-pic {
+    min-width: 100px;
+  }
+  .oracle-title {
+    font-size: 40px;
+  }
+  .oracle-letter {
+    font-size: 20px;
+  }
+  .oracle-intro {
+    align-items: center;
+  }
+}
+@media (max-width: 520px) {
+
+  .oracle-title {
+    font-size: 25px;
+  }
+  .oracle-letter {
+    font-size: 15px;
+  }
+  .oracle-main {
+    padding: 0 20px;
+  }
+}

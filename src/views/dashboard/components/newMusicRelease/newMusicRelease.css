@@ -1,0 +1,13 @@
+@media (max-width: 600px) {
+  .release-title{
+    font-size: 40px;
+  }
+}
+@media (max-width: 400px) {
+  .release-title{
+    font-size: 25px;
+  }
+  .release-letter {
+    font-size: 20px;
+  }
+}

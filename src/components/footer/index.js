@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FaFacebookF, FaInstagramSquare } from "react-icons/fa";
 const Footer = () => {
 
@@ -10,13 +11,13 @@ const Footer = () => {
             <img className="max-w-32 h-auto mx-auto" src="./images/qtklogo.webp"></img>
           </div>
           <div className="flex gap-8 items-center nav-bar mx-auto">
-            <button>HOME</button>
-            <button>ABOUT&nbsp;US</button>
-            <button>SERVICE</button>
-            <button>PHOTO</button>
-            <button>EPK&nbsp;FOR&nbsp;MEDIA</button>
-            <button>BLOG</button>
-            <button>CONTACT&nbsp;US</button>
+            <Link to="/">HOME</Link>
+            <Link to="/">ABOUT&nbsp;US</Link>
+            <Link to="/">SERVICE</Link>
+            <Link to="/">PHOTO</Link>
+            <Link to="/epk-for-media">EPK&nbsp;FOR&nbsp;MEDIA</Link>
+            <Link to="/">BLOG</Link>
+            <Link to="/">CONTACT&nbsp;US</Link>
           </div>
           <div className="flex justify-between px-32 py-4 top-header">
             <div className="mx-auto">

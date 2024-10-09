@@ -1,4 +1,5 @@
 import React from "react";
+import { Paginator } from "../../../../components";
 
 const MusicRevolution = () => {
 
@@ -42,7 +43,7 @@ const MusicRevolution = () => {
         ))}
       </div>
       <div>
-        {/* PageNation */}
+        {/* <Paginator /> */}
       </div>
     </>
   )

@@ -12,15 +12,15 @@ import {
 function App() {
   return (
     <>
-      <Header />
       <Router>
-        <Routes>
-          <Route exact path="/" name="WelcomePage" element={<Dashboard />} />
-          <Route exact path="/epk-for-media" name="WelcomePage" element={<EPK />} />
-        </Routes>
+        <Header />
+          <Routes>
+            <Route exact path="/" name="WelcomePage" element={<Dashboard />} />
+            <Route exact path="/epk-for-media" name="WelcomePage" element={<EPK />} />
+          </Routes>
+        <MusicPlayer />
+        <Footer />
       </Router>
-      <MusicPlayer />
-      <Footer />
     </>
   );
 }

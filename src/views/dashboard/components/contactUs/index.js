@@ -8,9 +8,9 @@ const ContactUs = () => {
       <div className="flex flex-col px-40 py-28 bg-[url('/public/images/music-pattern-background.png')] bg-blend-overlay bg-white-transparent"> 
         <div className="flex flex-col">
           <div className="text-xl text-center">QUESTIONS?</div>
-          <div className="text-4xl font-bold italic mt-2 text-[#090b86] text-center">
+          <h2 className="text-4xl font-bold italic mt-2 text-[#090b86] text-center">
             Contact&nbsp;Us
-          </div>
+          </h2>
         </div>
         <div className="flex flex-col px-32 mt-6">
           <div>Please, fill in the following field</div>
@@ -27,7 +27,6 @@ const ContactUs = () => {
             <AnimationButton content="Submit" />
           </div>
         </div>
-
         <div className="grid xl:grid-cols-2 gap-8 mt-12 px-20">
           <div className="flex justify-center p-4 bg-white rounded-md">
             <img width={720} height={720} src="./images/meta_eyJzcmNCdWNrZXQiOiJiemdsZmlsZXMifQ-10-400x516.webp"></img>

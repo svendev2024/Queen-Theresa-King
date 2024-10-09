@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Dropdown from 'react-bootstrap/Dropdown'; 
 import { FaAlignJustify } from 'react-icons/fa';  
 import './header.css'
@@ -29,13 +30,13 @@ const Header = () => {
             <img className="max-w-32 h-auto" src="./images/qtklogo.webp"></img>
           </div>
           <div className="flex gap-8 items-center justify-between nav-bar">
-            <button>HOME</button>
-            <button>ABOUT&nbsp;US</button>
-            <button>SERVICE</button>
-            <button>PHOTO</button>
-            <button onClick={() =>  window.history.pushState({}, '', '/epk-for-media')}>EPK&nbsp;FOR&nbsp;MEDIA</button>
-            <button>BLOG</button>
-            <button>CONTACT&nbsp;US</button>
+            <Link to="/">HOME</Link>
+            <Link to="/">ABOUT&nbsp;US</Link>
+            <Link to="/">SERVICE</Link>
+            <Link to="/">PHOTO</Link>
+            <Link to="/epk-for-media">EPK&nbsp;FOR&nbsp;MEDIA</Link>
+            <Link to="/">BLOG</Link>
+            <Link to="/">CONTACT&nbsp;US</Link>
           </div>
           <div className="flex items-center nav-bar">
             <button className="bg-white rounded-md text-black px-12 py-3">GET&nbsp;IN&nbsp;TOUCH</button>

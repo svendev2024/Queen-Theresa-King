@@ -1,5 +1,5 @@
 import React from "react";
-import { FaFacebookF } from "react-icons/fa";
+import { FaFacebookF, FaInstagramSquare, FaYoutube, FaTiktok, FaXing } from "react-icons/fa";
 
 const SocialMedia = () => {
 
@@ -7,7 +7,7 @@ const SocialMedia = () => {
     <>
       <div className="grid md:grid-cols-3">
         <div className="flex bg-main-pink h-[30vh]">
-          <FaFacebookF className="m-auto text-white"/>
+          <FaFacebookF className="m-auto text-white text-5xl"/>
         </div>
         <div className="flex justify-center bg-[#c80ee5] h-[30vh]">
           <div className="m-auto">
@@ -16,16 +16,16 @@ const SocialMedia = () => {
           </div>
         </div>
         <div className="flex bg-main-pink h-[30vh]">
-          <FaFacebookF className="m-auto text-white"/>
+          <FaXing className="m-auto text-white text-5xl"/>
         </div>
         <div className="flex bg-[#c80ee5] h-[30vh]">
-          <FaFacebookF className="m-auto text-white"/>
+          <FaInstagramSquare className="m-auto text-white text-5xl"/>
         </div>
         <div className="flex bg-main-pink h-[30vh]">
-          <FaFacebookF className="m-auto text-white"/>
+          <FaYoutube className="m-auto text-white text-5xl"/>
         </div>
         <div className="flex bg-[#c80ee5] h-[30vh]">
-          <FaFacebookF className="m-auto text-white"/>
+          <FaTiktok className="m-auto text-white text-5xl"/>
         </div>
       </div>
     </>

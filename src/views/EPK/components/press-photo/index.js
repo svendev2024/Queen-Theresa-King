@@ -19,10 +19,7 @@ const PressPhoto = () => {
   return (
     <>
       <div className="py-28 px-48">
-        <p className="text-center text-5xl italic py-4 text-main-blue">
-          Press Photos
-        </p>
-
+        <h2 className="text-center text-4xl italic py-4 text-main-blue">Press&nbsp;Photos</h2>
         <div className="grid grid-cols-3 gap-8">
           {imageList.map((imageItem, imageIndex) => (
             <div className="flex flex-col items-center justify-between w-96">
@@ -32,9 +29,9 @@ const PressPhoto = () => {
           ))}
         </div>
 
-        <p className="text-center text-5xl itali text-main-blue mt-12 mb-4 italic">
+        <h2 className="text-center text-4xl itali text-main-blue mt-12 mb-4 italic">
           Video
-        </p>
+        </h2>
         <iframe className="w-full h-[60vh]" src="https://www.youtube.com/embed/6shu3rXoR6c?feature=oembed"></iframe>
       </div>
     </>

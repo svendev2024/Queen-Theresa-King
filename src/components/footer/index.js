@@ -1,6 +1,5 @@
 import React from "react";
-import { facebook, instagram, menu1, menu2 } from "../icons";
-
+import { FaFacebookF, FaInstagramSquare } from "react-icons/fa";
 const Footer = () => {
 
   return (
@@ -23,20 +22,10 @@ const Footer = () => {
             <div className="mx-auto">
               <div className="flex gap-4">
                 <button className="rounded-md bg-main-pink w-8 h-8 flex">
-                  <div
-                    className="m-auto"
-                    dangerouslySetInnerHTML={{
-                      __html: facebook,
-                    }}
-                  />
+                  <FaFacebookF className="m-auto"/>
                 </button>
                 <button className="rounded-md bg-main-pink w-8 h-8 flex">
-                  <div
-                    className="m-auto"
-                    dangerouslySetInnerHTML={{
-                      __html: instagram,
-                    }}
-                  />
+                  <FaInstagramSquare className="m-auto"/>
                 </button>
               </div>
             </div>

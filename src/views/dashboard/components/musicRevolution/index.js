@@ -31,7 +31,7 @@ const MusicRevolution = () => {
       <div className="flex flex-col items-center px-36 py-28">
         <div className="flex flex-col justify-center">
           <div className="text-xl text-center">JOIN&nbsp;THE&nbsp;MUSIC&nbsp;REVOLUTION</div>
-          <div className="text-4xl font-bold italic mt-2 text-[#090b86]">World&nbsp;Peace&nbsp;Advocate</div>
+          <h2 className="text-4xl font-bold italic mt-2 text-[#090b86]">World&nbsp;Peace&nbsp;Advocate</h2>
         </div>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pt-8 gap-4 justify-center">

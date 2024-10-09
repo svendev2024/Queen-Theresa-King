@@ -28,9 +28,9 @@ const Offer = () => {
       <div className="flex flex-col items-center px-36 py-28 bg-[#f2f2f2]">
         <div className="flex flex-col">
           <div className="text-xl text-center">MOTIVATION&nbsp;SPEAKER</div>
-          <div className="text-4xl font-bold italic mt-2 text-[#090b86]">
-            WHAT&nbsp;WE&nbsp;OFFER
-          </div>
+          <h2 className="text-4xl playfair-font font-bold italic mt-2 text-[#090b86] playfair-font">
+            What&nbsp;We&nbsp;Offer
+          </h2>
         </div>
 
         <div className="grid sm:grid-cols-1 lg:grid-cols-3 pt-8 gap-4">

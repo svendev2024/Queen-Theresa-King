@@ -1,6 +1,6 @@
 // src/MusicPlayer.js  
 import React, { useRef } from 'react';
-import { nextIcon, prevIcon, stop, goTopIcon } from '../icons';
+import { FaArrowUp, FaFastForward, FaFastBackward, FaPlay } from "react-icons/fa";
 
 const MusicPlayer = () => {  
   const audioRef = useRef(null);  
@@ -20,24 +20,9 @@ const MusicPlayer = () => {
         <div className='flex justify-between w-full text-white px-3'>
           <div className='flex'>
             <div className='m-auto flex gap-3'>
-              <div
-                className="m-auto"
-                dangerouslySetInnerHTML={{
-                  __html: prevIcon,
-                }}
-              />
-              <div
-                className="m-auto"
-                dangerouslySetInnerHTML={{
-                  __html: stop,
-                }}
-              />
-              <div
-                className="m-auto"
-                dangerouslySetInnerHTML={{
-                  __html: nextIcon,
-                }}
-              />
+              <FaFastBackward />
+              <FaPlay />
+              <FaFastForward />
             </div>
           </div>
           <div className='flex flex-col'>
@@ -90,12 +75,7 @@ const MusicPlayer = () => {
         className='fixed bg-black opacity-30 hover:opacity-100 rounded-full bottom-40 right-7 p-3 cursor-pointer'
         onClick={() => scrollToTop()}
       >
-        <div
-          className="m-auto"
-          dangerouslySetInnerHTML={{
-            __html: goTopIcon,
-          }}
-        />
+        <FaArrowUp className='text-white'/>
       </div>
     </> 
   ) 

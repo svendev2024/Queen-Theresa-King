@@ -8,7 +8,7 @@ const AboutUs = () => {
       <div className="flex flex-col items-center px-36 py-28 bg-[#f7f4ff]">
         <div className="flex flex-col justify-center">
           <div className="text-xl text-center">FEEL&nbsp;THE&nbsp;BETTER!</div>
-          <div className="text-4xl font-bold italic mt-2 text-[#090b86]">ABOUT&nbsp;US</div>
+          <h2 className="text-4xl font-bold italic mt-2 text-[#090b86]">About&nbsp;Us</h2>
         </div>
 
         <div className="text-xl text-center mt-6">

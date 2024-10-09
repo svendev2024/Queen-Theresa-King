@@ -3,7 +3,7 @@ import React from "react";
 const PressReview = () => {
   return (
     <div className="flex flex-col items-center py-20 bg-[#f7f7f7]">
-      <p className="text-center text-5xl italic py-4 text-main-blue">Press/Reviews</p>
+      <h2 className="text-center text-4xl italic py-4 text-main-blue">Press/Reviews</h2>
       <div className="w-5/6 justify-center grid grid-cols-2 gap-8">
         <div className="border-b-2 border-main-pink bg-white p-8 rounded-xl">
           <div className="text-2xl">

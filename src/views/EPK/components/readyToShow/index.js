@@ -6,7 +6,7 @@ const ReadyToShow = () => {
     <>
       <div className="flex flex-col items-center px-36 py-28 bg-[#f7f4ff]">
         <div className="flex flex-col justify-center">
-          <div className="text-4xl font-bold italic mt-2 text-[#090b86]">Ready For The Show</div>
+          <h2 className="text-4xl font-bold italic mt-2 text-[#090b86]">Ready&nbsp;For&nbsp;The&nbsp;Show</h2>
         </div>
 
         <div className="text-xl text-center mt-6">

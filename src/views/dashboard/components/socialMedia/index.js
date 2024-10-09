@@ -1,5 +1,5 @@
 import React from "react";
-import { facebook } from "../../../../components/icons";
+import { FaFacebookF } from "react-icons/fa";
 
 const SocialMedia = () => {
 
@@ -7,12 +7,7 @@ const SocialMedia = () => {
     <>
       <div className="grid md:grid-cols-3">
         <div className="flex bg-main-pink h-[30vh]">
-          <div
-            className="m-auto"
-            dangerouslySetInnerHTML={{
-              __html: facebook,
-            }}
-          />
+          <FaFacebookF className="m-auto text-white"/>
         </div>
         <div className="flex justify-center bg-[#c80ee5] h-[30vh]">
           <div className="m-auto">
@@ -21,36 +16,16 @@ const SocialMedia = () => {
           </div>
         </div>
         <div className="flex bg-main-pink h-[30vh]">
-          <div
-            className="m-auto"
-            dangerouslySetInnerHTML={{
-              __html: facebook,
-            }}
-          />
+          <FaFacebookF className="m-auto text-white"/>
         </div>
         <div className="flex bg-[#c80ee5] h-[30vh]">
-          <div
-            className="m-auto"
-            dangerouslySetInnerHTML={{
-              __html: facebook,
-            }}
-          />
+          <FaFacebookF className="m-auto text-white"/>
         </div>
         <div className="flex bg-main-pink h-[30vh]">
-          <div
-            className="m-auto"
-            dangerouslySetInnerHTML={{
-              __html: facebook,
-            }}
-          />
+          <FaFacebookF className="m-auto text-white"/>
         </div>
         <div className="flex bg-[#c80ee5] h-[30vh]">
-          <div
-            className="m-auto"
-            dangerouslySetInnerHTML={{
-              __html: facebook,
-            }}
-          />
+          <FaFacebookF className="m-auto text-white"/>
         </div>
       </div>
     </>

@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Paginator } from "../../../../components";
 
 const MusicRevolution = () => {
+
+  const [totalPage, setTotalPage] = useState(2)
+  const [currentPage, setCurrentPage] = useState(1)
 
   const imageList = [
     {
@@ -36,14 +39,14 @@ const MusicRevolution = () => {
         </div>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pt-8 gap-4 justify-center">
-        {imageList.map((imageItem, imageIndex) => (
+        {imageList.slice((currentPage - 1) * 4 , currentPage * 4).map((imageItem, imageIndex) => (
           <div className="flex" key={imageIndex}>
             <img className="size-96 p-2" src={imageItem.image}/>
           </div>
         ))}
       </div>
-      <div>
-        {/* <Paginator /> */}
+      <div className="flex py-14">
+        <Paginator totalPage={totalPage} currentPage={currentPage} setCurrentPage={setCurrentPage} />
       </div>
     </>
   )

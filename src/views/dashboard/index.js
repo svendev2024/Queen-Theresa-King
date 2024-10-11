@@ -1,16 +1,15 @@
 import React from "react";
-import { 
+import {
   MusicalOracle,
   NewMusicRelease,
   Offer,
   MusicRevolution,
   AboutUs,
   SocialMedia,
-  ContactUs
- } from "./components";
+  ContactUs,
+} from "./components";
 
 const Dashboard = () => {
-
   return (
     <>
       <MusicalOracle />
@@ -21,7 +20,7 @@ const Dashboard = () => {
       <SocialMedia />
       <ContactUs />
     </>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;

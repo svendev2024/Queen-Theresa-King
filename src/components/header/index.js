@@ -1,55 +1,129 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Dropdown from 'react-bootstrap/Dropdown'; 
-import { FaAlignJustify } from 'react-icons/fa';  
-import './header.css'
+import Dropdown from "react-bootstrap/Dropdown";
+import { FaAlignJustify, FaChevronDown } from "react-icons/fa";
+import "./header.css";
 
 const Header = () => {
+  const [isDropdown, setIsDropdown] = useState({
+    service: false,
+  });
 
   return (
     <>
       <div className="w-full">
-        <div className="fixed w-8 h-8 end-3 top-3 flex flex-col">
-          <Dropdown>  
-            <Dropdown.Toggle>  
-              <FaAlignJustify color="red" />
-            </Dropdown.Toggle>
-
-            <Dropdown.Menu className="bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">  
-              <Dropdown.Item className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Home Menu</Dropdown.Item>  
-              <Dropdown.Item className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Login/SignUp</Dropdown.Item>  
-              <Dropdown.Item className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Window Mode</Dropdown.Item>  
-              <Dropdown.Item className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Hard Refresh</Dropdown.Item>  
-              <Dropdown.Item className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Hide SmartTicker</Dropdown.Item>  
-            </Dropdown.Menu>  
-          </Dropdown>  
-        </div>
-
-        <div className="flex justify-between px-20 py-4 bg-black text-white align-center gap-12">
+        <div className="flex justify-between px-8 py-4 bg-black text-white align-center gap-12 md:px-16">
           <div className="flex">
             <img className="max-w-32 h-auto" src="./images/qtklogo.webp"></img>
           </div>
           <div className="flex gap-8 items-center justify-between nav-bar">
             <Link to="/">HOME</Link>
             <Link to="/">ABOUT&nbsp;US</Link>
-            <Link to="/">SERVICE</Link>
+            <div className="cursor-pointer">
+              <div
+                className="flex"
+                onClick={() =>
+                  setIsDropdown((prev) => ({ ...prev, service: !prev.service }))
+                }
+              >
+                SERVICES&nbsp;
+                <FaChevronDown className="my-auto" />
+              </div>
+              <div
+                id="dropdown"
+                className={`absolute z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 ${
+                  isDropdown.service ? "" : "hidden"
+                }`}
+              >
+                <div className="absolute z-50 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 text-black">
+                  <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                    Personal&nbsp;Growth&nbsp;Seminars&nbsp;and&nbsp;Workshops
+                  </Link>
+                  <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                    Motivational&nbsp;Speaker
+                  </Link>
+                  <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                    Soulful&nbsp;Music&nbsp;With&nbsp;Powerful&nbsp;Messages
+                  </Link>
+                </div>
+              </div>
+            </div>
             <Link to="/">PHOTO</Link>
             <Link to="/epk-for-media">EPK&nbsp;FOR&nbsp;MEDIA</Link>
             <Link to="/">BLOG</Link>
             <Link to="/">CONTACT&nbsp;US</Link>
           </div>
           <div className="flex items-center nav-bar">
-            <button className="bg-white rounded-md text-black px-12 py-3">GET&nbsp;IN&nbsp;TOUCH</button>
-          </div>
-          <div className="drop-menu align-center">
-            <button className="w-auto">
-              <FaAlignJustify />
+            <button className="bg-white rounded-md text-black px-12 py-3">
+              GET&nbsp;IN&nbsp;TOUCH
             </button>
+          </div>
+          <div className="flex mobile-menu">
+            <div className="my-auto">
+              <div className="cursor-pointer">
+                <div
+                  className="flex"
+                  onClick={() =>
+                    setIsDropdown((prev) => ({
+                      ...prev,
+                      service: !prev.service,
+                    }))
+                  }
+                >
+                  <FaAlignJustify className="my-auto ml-auto text-2xl" />
+                </div>
+                <div
+                  id="dropdown"
+                  className={`relative z-10 bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 right-0 mt-2 ${
+                    isDropdown.service ? "" : "hidden"
+                  }`}
+                >
+                  <div className="absolute z-50 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 text-black">
+                    <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                      Home
+                    </Link>
+                    <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                      ABOUT&nbsp;US
+                    </Link>
+                    <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                      SERVICES
+                    </Link>
+                    <Link className="block px-20 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                      Personal&nbsp;Growth&nbsp;Seminars&nbsp;and&nbsp;Workshops
+                    </Link>
+                    <Link className="block px-20 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                      Motivational&nbsp;Speaker
+                    </Link>
+                    <Link className="block px-20 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                      Soulful&nbsp;Music&nbsp;With&nbsp;Powerful&nbsp;Messages
+                    </Link>
+                    <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                      PHOTOS
+                    </Link>
+                    <Link
+                      to="/epk-for-media"
+                      className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      EPK&nbsp;FOR&nbsp;MEDIA
+                    </Link>
+                    <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                      SHOP
+                    </Link>
+                    <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                      BLOGS
+                    </Link>
+                    <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                      CONTACT&nbsp;US
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

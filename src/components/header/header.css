@@ -1,6 +1,7 @@
-.drop-menu {
+.mobile-menu {
   display: none;
 }
+
 
 @media (max-width: 922px) {
   .top-header {
@@ -11,7 +12,7 @@
   .nav-bar {
     display: none;
   }
-  .drop-menu {
+  .mobile-menu {
     display: flex
   }
 }

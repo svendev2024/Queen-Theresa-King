@@ -2,18 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {  
-  font-family: 'karla-font';  
-  src: url('../public/fonts/Karla/Karla-VariableFont_wght.ttf') format('truetype'); /* Adjust the path as necessary */  
-  font-weight: normal;  
-  font-style: normal;  
+@font-face {
+  font-family: 'karla-font';
+  src: url('../public/fonts/Karla/Karla-VariableFont_wght.ttf') format('truetype'); /* Adjust the path as necessary */
+  font-weight: normal;
+  font-style: normal;
 }
 
-@font-face {  
-  font-family: 'playfair-font';  
-  src: url('../public/fonts/Playfair_Display/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype'); /* Adjust the path as necessary */  
-  font-weight: normal;  
-  font-style: normal;  
+@font-face {
+  font-family: 'playfair-font';
+  src: url('../public/fonts/Playfair_Display/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype'); /* Adjust the path as necessary */
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {

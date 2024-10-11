@@ -1,16 +1,15 @@
 import React from "react";
-import { 
+import {
   Title,
   Positivity,
   Description,
   Album,
   ReadyToShow,
   PressReview,
-  PressPhoto
+  PressPhoto,
 } from "./components";
 
 const EPK = () => {
-
   return (
     <>
       <Title />
@@ -21,7 +20,7 @@ const EPK = () => {
       <PressReview />
       <PressPhoto />
     </>
-  )
-}
+  );
+};
 
-export default EPK
+export default EPK;

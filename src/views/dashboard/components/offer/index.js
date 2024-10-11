@@ -1,7 +1,6 @@
 import React from "react";
 
 const Offer = () => {
-  
   const offerList = [
     {
       image: "./images/creativity.png",
@@ -35,7 +34,10 @@ const Offer = () => {
 
         <div className="grid sm:grid-cols-1 lg:grid-cols-3 pt-8 gap-4">
           {offerList.map((item, index) => (
-            <div className="flex flex-col gap-2 sm:items-center lg:items-start lg:flex-row" key={index}>
+            <div
+              className="flex flex-col gap-2 sm:items-center lg:items-start lg:flex-row"
+              key={index}
+            >
               <div className="w-16">
                 <img
                   src={item.image}
@@ -44,8 +46,12 @@ const Offer = () => {
                 />
               </div>
               <div className="flex-1 ">
-                <div className="italic text-3xl text-[#9407a9] sm:text-center lg:text-start">{item.title}</div>
-                <div className="sm:text-center lg:text-start">{item.content}</div>
+                <div className="italic text-3xl text-[#9407a9] sm:text-center lg:text-start">
+                  {item.title}
+                </div>
+                <div className="sm:text-center lg:text-start">
+                  {item.content}
+                </div>
               </div>
             </div>
           ))}

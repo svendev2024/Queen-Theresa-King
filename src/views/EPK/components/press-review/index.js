@@ -3,8 +3,10 @@ import React from "react";
 const PressReview = () => {
   return (
     <div className="flex flex-col items-center py-20 bg-[#f7f7f7]">
-      <h2 className="text-center text-4xl italic py-4 text-main-blue">Press/Reviews</h2>
-      <div className="w-5/6 justify-center grid grid-cols-2 gap-8">
+      <h2 className="text-center text-4xl font-bold italic py-4 text-main-blue">
+        Press/Reviews
+      </h2>
+      <div className="w-5/6 justify-center grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="border-b-2 border-main-pink bg-white p-8 rounded-xl">
           <div className="text-2xl">
             Gospel Jazz Singer Queen Theresa King Releases Single “This Too
@@ -38,7 +40,10 @@ const PressReview = () => {
 
         <div className="border-b-2 border-main-pink bg-white p-8 rounded-xl text-2xl grid">
           <img src="/images/Queen-Theresa-King1-628x250.jpg" alt="woman" />
-          <a href="https://uncommonmag.com/?p=1197" className="mt-4 hover:text-main-pink hover:underline transition-all duration-300">
+          <a
+            href="https://uncommonmag.com/?p=1197"
+            className="mt-4 hover:text-main-pink hover:underline transition-all duration-300"
+          >
             Peace Activist Queen Theresa King Releases Timely New Single 'This
             Too Shall Pass'
           </a>

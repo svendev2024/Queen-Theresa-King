@@ -18,21 +18,31 @@ const PressPhoto = () => {
 
   return (
     <>
-      <div className="py-28 px-48">
-        <h2 className="text-center text-4xl italic py-4 text-main-blue">Press&nbsp;Photos</h2>
-        <div className="grid grid-cols-3 gap-8">
+      <div className="py-28 px-4 lg:px-36">
+        <h2 className="text-center text-4xl font-bold italic py-4 text-main-blue">
+          Press&nbsp;Photos
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {imageList.map((imageItem, imageIndex) => (
-            <div className="flex flex-col items-center justify-between w-96">
+            <div
+              className="flex flex-col items-center justify-between w-96"
+              key={imageIndex}
+            >
               <img src={imageItem.pic} className="h-[400px] w-full" />
-              <div className="bg-main-pink text-white w-full h-12 flex justify-center items-center text-center p-8 text-xl">{imageItem.title}</div>
+              <div className="bg-main-pink text-white w-full h-12 flex justify-center items-center text-center p-8 text-xl">
+                {imageItem.title}
+              </div>
             </div>
           ))}
         </div>
 
-        <h2 className="text-center text-4xl itali text-main-blue mt-12 mb-4 italic">
+        <h2 className="text-center text-4xl font-bold itali text-main-blue mt-20 mb-4 italic">
           Video
         </h2>
-        <iframe className="w-full h-[60vh]" src="https://www.youtube.com/embed/6shu3rXoR6c?feature=oembed"></iframe>
+        <iframe
+          className="w-full h-[60vh]"
+          src="https://www.youtube.com/embed/6shu3rXoR6c?feature=oembed"
+        ></iframe>
       </div>
     </>
   );

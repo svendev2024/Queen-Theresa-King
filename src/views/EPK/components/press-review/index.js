@@ -30,7 +30,7 @@ const PressReview = () => {
           </div>
         </div>
 
-        <div className="border-b-2 border-main-pink text-main-pink bg-white p-8 rounded-xl text-lg">
+        <div className="border-b-2 border-main-pink text-main-pink bg-white p-8 rounded-xl text-lg truncate">
           https://eurweb.com/2020/04/16/gospel-jazz-singer-queen-theresa-king-releases-long-awaited-timely-single-this-too-shall-pass-watch/
         </div>
 

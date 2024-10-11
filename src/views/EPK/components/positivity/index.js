@@ -3,7 +3,7 @@ import React from "react";
 const Positivity = () => {
   return (
     <>
-      <div className="grid lg:grid-cols-2 px-40 py-28 bg-blend-overlay bg-white-transparent">
+      <div className="grid lg:grid-cols-2 md:px-40 py-28 bg-blend-overlay bg-white-transparent">
         <div className="flex justify-center p-4 rounded-md">
           <img
             className="border-[16px] border-[#eaeaea]"

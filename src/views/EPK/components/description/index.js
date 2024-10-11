@@ -3,7 +3,7 @@ import React from "react";
 const Description = () => {
   return (
     <>
-      <div className="text-white bg-[url('/public/images/ascacc-400x516.jpg')] h-screen bg-cover bg-no-repeat py-20 bg-[#2f1b1b] bg-center w-full bg-blend-overlay px-40 oracle-main gap-8">
+      <div className="text-white bg-[url('/public/images/ascacc-400x516.jpg')] bg-cover bg-no-repeat py-20 bg-[#2f1b1b] bg-center w-full bg-blend-overlay px-40 oracle-main gap-8">
         <div className="grid lg:grid-cols-2 gap-8">
           <div className="">
             <img

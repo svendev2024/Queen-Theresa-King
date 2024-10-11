@@ -25,7 +25,7 @@ const PressPhoto = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {imageList.map((imageItem, imageIndex) => (
             <div
-              className="flex flex-col items-center justify-between w-96"
+              className="flex flex-col items-center justify-between"
               key={imageIndex}
             >
               <img src={imageItem.pic} className="h-[400px] w-full" />

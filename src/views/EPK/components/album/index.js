@@ -3,7 +3,7 @@ import React from "react";
 const Album = () => {
   return (
     <>
-      <div className="grid lg:grid-cols-2 px-40 py-28 bg-blend-overlay bg-[url('/public/images/music-pattern-background.png')] bg-white-transparent">
+      <div className="grid lg:grid-cols-2 px-8 md:px-32 py-28 bg-blend-overlay bg-[url('/public/images/music-pattern-background.png')] bg-white-transparent">
         <div className="flex flex-col my-auto">
           <div className="text-5xl playfair-font italic text-center lg:text-start text-[#090b86]">
             Album

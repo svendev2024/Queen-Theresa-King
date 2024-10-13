@@ -17,8 +17,9 @@ const Header = () => {
             <img className="max-w-32 h-auto" src="./images/qtklogo.webp"></img>
           </div>
           <div className="flex gap-8 items-center justify-between nav-bar">
+            {/*
             <Link to="/">HOME</Link>
-            <Link to="/">ABOUT&nbsp;US</Link>
+            <Link to="/">ABOUT US</Link>
             <div className="cursor-pointer">
               <div
                 className="flex"
@@ -26,7 +27,7 @@ const Header = () => {
                   setIsDropdown((prev) => ({ ...prev, service: !prev.service }))
                 }
               >
-                SERVICES&nbsp;
+                SERVICES
                 <FaChevronDown className="my-auto" />
               </div>
               <div
@@ -37,25 +38,28 @@ const Header = () => {
               >
                 <div className="absolute z-50 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 text-black">
                   <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                    Personal&nbsp;Growth&nbsp;Seminars&nbsp;and&nbsp;Workshops
+                    Personal Growth Seminars and Workshops
                   </Link>
                   <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                    Motivational&nbsp;Speaker
+                    Motivational Speaker
                   </Link>
                   <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                    Soulful&nbsp;Music&nbsp;With&nbsp;Powerful&nbsp;Messages
+                    Soulful Music with Powerful Messages
                   </Link>
                 </div>
               </div>
             </div>
             <Link to="/">PHOTO</Link>
-            <Link to="/epk-for-media">EPK&nbsp;FOR&nbsp;MEDIA</Link>
+            <Link to="/epk-for-media">EPK FOR MEDIA</Link>
             <Link to="/">BLOG</Link>
-            <Link to="/">CONTACT&nbsp;US</Link>
+            <Link to="/">CONTACT US</Link>
+          */}
           </div>
-          <div className="flex items-center nav-bar">
+          <div className="flex items-center gap-8 nav-bar">
+            <Link to="/">HOME</Link>
+            <Link to="/epk-for-media">EPK FOR MEDIA</Link>
             <button className="bg-white rounded-md text-black px-12 py-3">
-              GET&nbsp;IN&nbsp;TOUCH
+              GET IN TOUCH
             </button>
           </div>
           <div className="flex mobile-menu">
@@ -79,42 +83,56 @@ const Header = () => {
                   }`}
                 >
                   <div className="absolute z-50 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 text-black">
+                    {/* NOTE: Do we really need to repeat the header twice? */}
                     <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                       Home
-                    </Link>
-                    <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                      ABOUT&nbsp;US
-                    </Link>
-                    <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                      SERVICES
-                    </Link>
-                    <Link className="block px-20 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                      Personal&nbsp;Growth&nbsp;Seminars&nbsp;and&nbsp;Workshops
-                    </Link>
-                    <Link className="block px-20 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                      Motivational&nbsp;Speaker
-                    </Link>
-                    <Link className="block px-20 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                      Soulful&nbsp;Music&nbsp;With&nbsp;Powerful&nbsp;Messages
-                    </Link>
-                    <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                      PHOTOS
                     </Link>
                     <Link
                       to="/epk-for-media"
                       className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
-                      EPK&nbsp;FOR&nbsp;MEDIA
+                      EPK FOR MEDIA
                     </Link>
-                    <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                      SHOP
-                    </Link>
-                    <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                      BLOGS
-                    </Link>
-                    <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                      CONTACT&nbsp;US
-                    </Link>
+                    {/*
+                      TODO: Convert to be dynamic.
+                      FIXME: Services header doesn't render properly on mobile.
+                      <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                        Home
+                      </Link>
+                      <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                        ABOUT US
+                      </Link>
+                      <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                        SERVICES
+                      </Link>
+                      <Link className="block px-20 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                        Personal Growth Seminars and Workshops
+                      </Link>
+                      <Link className="block px-20 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                        Motivational Speaker
+                      </Link>
+                      <Link className="block px-20 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                        Soulful Music with Powerful Messages
+                      </Link>
+                      <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                        PHOTOS
+                      </Link>
+                      <Link
+                        to="/epk-for-media"
+                        className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >
+                        EPK FOR MEDIA
+                      </Link>
+                      <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                        SHOP
+                      </Link>
+                      <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                        BLOGS
+                      </Link>
+                      <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                        CONTACT US
+                      </Link>
+                    */}
                   </div>
                 </div>
               </div>

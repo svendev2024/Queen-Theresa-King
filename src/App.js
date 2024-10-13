@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Header, Footer, MusicPlayer } from "./components";
-import { Dashboard, EPK } from "./views";
+import { Home, EPK } from "./views";
 
 function App() {
   return (
@@ -8,11 +8,11 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route exact path="/" name="WelcomePage" element={<Dashboard />} />
+          <Route exact path="/" name="WelcomePage" element={<Home />} />
           <Route
             exact
             path="/epk-for-media"
-            name="WelcomePage"
+            name="EPKPage"
             element={<EPK />}
           />
         </Routes>

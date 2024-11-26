@@ -14,12 +14,12 @@ const Footer = () => {
           </div>
           <div className="flex gap-8 items-center nav-bar mx-auto">
             <Link to="/">HOME</Link>
-            <Link to="/">ABOUT US</Link>
+            <Link to="/">ABOUT&nbsp;US</Link>
             <Link to="/">SERVICE</Link>
             <Link to="/">PHOTO</Link>
-            <Link to="/epk-for-media">EPK FOR MEDIA</Link>
+            <Link to="/epk-for-media">EPK&nbsp;FOR&nbsp;MEDIA</Link>
             <Link to="/">BLOG</Link>
-            <Link to="/">CONTACT US</Link>
+            <Link to="/">CONTACT&nbsp;US</Link>
           </div>
           <div className="flex justify-between px-32 py-4 top-header">
             <div className="mx-auto">

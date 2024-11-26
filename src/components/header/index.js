@@ -19,7 +19,7 @@ const Header = () => {
           <div className="flex gap-8 items-center justify-between nav-bar">
             {/*
             <Link to="/">HOME</Link>
-            <Link to="/">ABOUT US</Link>
+            <Link to="/">ABOUT&nbsp;US</Link>
             <div className="cursor-pointer">
               <div
                 className="flex"
@@ -27,7 +27,7 @@ const Header = () => {
                   setIsDropdown((prev) => ({ ...prev, service: !prev.service }))
                 }
               >
-                SERVICES
+                SERVICES&nbsp;
                 <FaChevronDown className="my-auto" />
               </div>
               <div
@@ -38,28 +38,28 @@ const Header = () => {
               >
                 <div className="absolute z-50 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 text-black">
                   <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                    Personal Growth Seminars and Workshops
+                    Personal&nbsp;Growth&nbsp;Seminars&nbsp;and&nbsp;Workshops
                   </Link>
                   <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                    Motivational Speaker
+                    Motivational&nbsp;Speaker
                   </Link>
                   <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                    Soulful Music with Powerful Messages
+                    Soulful&nbsp;Music&nbsp;with&nbsp;Powerful&nbsp;Messages
                   </Link>
                 </div>
               </div>
             </div>
             <Link to="/">PHOTO</Link>
-            <Link to="/epk-for-media">EPK FOR MEDIA</Link>
+            <Link to="/epk-for-media">EPK&nbsp;FOR&nbsp;MEDIA</Link>
             <Link to="/">BLOG</Link>
-            <Link to="/">CONTACT US</Link>
+            <Link to="/">CONTACT&nbsp;US</Link>
           */}
           </div>
           <div className="flex items-center gap-8 nav-bar">
             <Link to="/">HOME</Link>
-            <Link to="/epk-for-media">EPK FOR MEDIA</Link>
+            <Link to="/epk-for-media">EPK&nbsp;FOR&nbsp;MEDIA</Link>
             <button className="bg-white rounded-md text-black px-12 py-3">
-              GET IN TOUCH
+              GET&nbsp;IN&nbsp;TOUCH
             </button>
           </div>
           <div className="flex mobile-menu">
@@ -91,7 +91,7 @@ const Header = () => {
                       to="/epk-for-media"
                       className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
-                      EPK FOR MEDIA
+                      EPK&nbsp;FOR&nbsp;MEDIA
                     </Link>
                     {/*
                       TODO: Convert to be dynamic.
@@ -100,19 +100,19 @@ const Header = () => {
                         Home
                       </Link>
                       <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                        ABOUT US
+                        ABOUT&nbsp;US
                       </Link>
                       <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                         SERVICES
                       </Link>
                       <Link className="block px-20 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                        Personal Growth Seminars and Workshops
+                        Personal&nbsp;Growth&nbsp;Seminars&nbsp;and&nbsp;Workshops
                       </Link>
                       <Link className="block px-20 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                        Motivational Speaker
+                        Motivational&nbsp;Speaker
                       </Link>
                       <Link className="block px-20 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                        Soulful Music with Powerful Messages
+                        Soulful&nbsp;Music&nbsp;with&nbsp;Powerful&nbsp;Messages
                       </Link>
                       <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                         PHOTOS
@@ -121,7 +121,7 @@ const Header = () => {
                         to="/epk-for-media"
                         className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                       >
-                        EPK FOR MEDIA
+                        EPK&nbsp;FOR&nbsp;MEDIA
                       </Link>
                       <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                         SHOP
@@ -130,7 +130,7 @@ const Header = () => {
                         BLOGS
                       </Link>
                       <Link className="block px-8 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                        CONTACT US
+                        CONTACT&nbsp;US
                       </Link>
                     */}
                   </div>

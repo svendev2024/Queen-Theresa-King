@@ -1,5 +1,13 @@
+version: "3"
 services:
   nginx:
-    build: .
-    ports:
-      - "80:8080"
+    image: qtk/nginx:alpine
+    networks:
+      - traefik-net
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.qtk.rule=Host(`54.248.158.177`)
+      - traefik.http.services.qtk-service.loadbalancer.server.port=8080
+networks:
+  traefik-net:
+    external: true

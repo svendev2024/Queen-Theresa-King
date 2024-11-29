@@ -1,0 +1,10 @@
+services:
+  app:
+    image: node:alpine
+    working_dir: /usr/src/app
+    volumes:
+      - ./:/usr/src/app
+    command: npm start
+    user: node
+    ports:
+      - 3000:3000

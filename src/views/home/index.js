@@ -9,7 +9,7 @@ import {
   ContactUs,
 } from "./components";
 
-const Dashboard = () => {
+const Home = () => {
   return (
     <>
       <MusicalOracle />
@@ -23,4 +23,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Home;

@@ -20,7 +20,7 @@ const ContactUs = () => {
 
     // Send form data to Strapi API
     try {
-      const response = await fetch('http://localhost:1337/api/contacts', {
+      const response = await fetch(`${process.env.REACT_APP_STRAPI_API_URL}/api/contacts`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

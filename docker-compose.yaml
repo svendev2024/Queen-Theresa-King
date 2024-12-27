@@ -1,6 +1,7 @@
 services:
   app:
     image: node:alpine
+    env_file: .env
     working_dir: /usr/src/app
     volumes:
       - ./:/usr/src/app
@@ -11,13 +12,15 @@ services:
 
   strapi:
     container_name: strapi
-    build: 
+    build:
       context: ./strapi
       dockerfile: Dockerfile
     image: strapi:latest
     user: node
     restart: unless-stopped
-    env_file: .env
+    env_file:
+        - .env
+        - strapi/.env
     environment:
       DATABASE_CLIENT: ${DATABASE_CLIENT}
       DATABASE_HOST: db
@@ -37,7 +40,7 @@ services:
       - '1337:1337'
     depends_on:
       - db
-      
+
   db:
     platform: linux/amd64 # for platform error on Apple M1 chips
     restart: unless-stopped
@@ -51,7 +54,7 @@ services:
       - strapi-data:/var/lib/postgresql/data/
     ports:
       - '5432:5432'
-      
+
   adminer:
     image: adminer
     restart: unless-stopped

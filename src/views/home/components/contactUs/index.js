@@ -1,7 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import { AnimationButton } from "../../../../components";
 
 const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Send form data to Strapi API
+    try {
+      const response = await fetch(`${process.env.REACT_APP_STRAPI_API_URL}/api/contacts`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          data: formData,
+        })
+      });
+
+      if (response.ok) {
+        // Handle successful submission (e.g., show a success message)
+        console.log('Contact form submitted successfully!');
+        setIsSubmitted(true);
+      } else {
+        // Handle error (e.g., display an error message)
+        console.error('Error submitting contact form:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error submitting contact form:', error);
+    }
+  };
   return (
     <>
       <div className="flex flex-col px-8 py-28 bg-[url('/public/images/music-pattern-background.png')] bg-blend-overlay bg-white-transparent lg:px-36">
@@ -11,33 +51,42 @@ const ContactUs = () => {
             Contact&nbsp;Us
           </h2>
         </div>
-        <div className="flex flex-col px-4 mt-6 lg:px-20">
-          <div>Please, fill in the following field</div>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
+        {isSubmitted ? (
+          <p>Your message has been sent!</p>
+        ) : (
+          <form className="flex flex-col px-4 mt-6 lg:px-20" onSubmit={handleSubmit}>
+            {/* FIXME: Validation errors <div>Please, fill in the following field</div> */}
+            <div className="grid md:grid-cols-2 gap-8">
               <input
                 type="text"
+                onChange={handleChange}
+                value={formData.name}
+                name="name"
                 className="bg-[#dadbe7] text-white h-[45px] w-full p-4"
                 placeholder="Name"
               />
-            </div>
-            <div>
               <input
                 type="email"
+                onChange={handleChange}
+                value={formData.email}
+                name="email"
                 className="bg-[#dadbe7] text-white h-[45px] w-full p-4"
                 placeholder="Email"
               />
             </div>
-          </div>
-          <textarea
-            className="bg-[#dadbe7] text-white w-full p-4 mt-6"
-            rows="6"
-            placeholder="Message"
-          ></textarea>
-          <div className="flex mt-2 flex-row-reverse">
-            <AnimationButton content="Submit" />
-          </div>
-        </div>
+            <textarea
+              className="bg-[#dadbe7] text-white w-full p-4 mt-6"
+              onChange={handleChange}
+              value={formData.message}
+              name="message"
+              rows="6"
+              placeholder="Message"
+            ></textarea>
+            <div className="flex mt-2 flex-row-reverse">
+              <AnimationButton content="Submit" />
+            </div>
+          </form>
+        )}
         <div className="grid xl:grid-cols-2 gap-8 mt-12 lg:px-16">
           <div className="flex justify-center p-4 bg-white rounded-md">
             <img

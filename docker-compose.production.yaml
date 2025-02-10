@@ -1,13 +1,123 @@
-version: "3"
+version: "3.8"
 services:
-  nginx:
+  qtk-web:
     image: qtk/nginx:alpine
     networks:
-      - traefik-net
+      - traefik-public
+    environment:
+      REACT_APP_STRAPI_API_URL: https://cms.queentheresaking.com
+    deploy:
+      mode: replicated
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 10s
+        order: start-first
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+      resources:
+        limits:
+          memory: 2G
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.qtk.rule=Host(`queentheresaking.com`) || Host(`199.241.139.123`)"
+        - "traefik.http.routers.qtk.entrypoints=websecure"
+        - "traefik.http.routers.qtk.tls=true"
+        - "traefik.http.routers.qtk.tls.certresolver=letsencrypt"
+        - "traefik.http.services.qtk-service.loadbalancer.server.port=8080"
+        - "traefik.docker.network=traefik-public"
+        - "traefik.http.services.qtk-service.loadbalancer.healthcheck.path=/"
+        - "traefik.http.services.qtk-service.loadbalancer.healthcheck.interval=10s"
+        - "traefik.http.services.qtk-service.loadbalancer.healthcheck.timeout=5s"
+
+  strapi:
+    image: qtk/strapi:latest
+    networks:
+      - traefik-public
+      - qtk-internal
+    env_file:
+      - stack.env
+    deploy:
+      mode: replicated
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 10s
+        order: start-first
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+      resources:
+        limits:
+          memory: 2G
+    environment:
+      # FIXME: Need to find out how to interpolate variables in Swarm.
+      DATABASE_CLIENT: postgres
+      DATABASE_HOST: db
+      DATABASE_NAME: postgres
+      DATABASE_USERNAME: postgres
+      DATABASE_PORT: 5432
+      DATABASE_PASSWORD: d3v123!23
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      PORT: 1337
+      APP_KEYS: 1,2,3,4
+      API_TOKEN_SALT: 123
+      ADMIN_JWT_SECRET: 1234
+      TRANSFER_TOKEN_SALT: 123
+      JWT_SECRET: 1234
+    volumes:
+      - ./strapi/config:/opt/app/config
+      - ./strapi/src:/opt/app/src
+      - ./strapi/public/uploads:/opt/app/public/uploads
+    depends_on:
+      - db
     labels:
-      - traefik.enable=true
-      - traefik.http.routers.qtk.rule=Host(`54.248.158.177`)
-      - traefik.http.services.qtk-service.loadbalancer.server.port=8080
+      - "traefik.enable=true"
+      - "traefik.http.routers.qtk-strapi.rule=Host(`cms.queentheresaking.com`)"
+      - "traefik.http.routers.qtk-strapi.entrypoints=websecure"
+      - "traefik.http.routers.qtk-strapi.tls=true"
+      - "traefik.http.routers.qtk-strapi.tls.certresolver=letsencrypt"
+      - "traefik.http.services.qtk-strapi-service.loadbalancer.server.port=1337"
+      - "traefik.docker.network=traefik-public"
+      - "traefik.http.services.qtk-strapi-service.loadbalancer.healthcheck.path=/"
+      - "traefik.http.services.qtk-strapi-service.loadbalancer.healthcheck.interval=10s"
+      - "traefik.http.services.qtk-strapi-service.loadbalancer.healthcheck.timeout=5s"
+
+  db:
+    env_file:
+      - stack.env
+    image: postgres:alpine
+    deploy:
+      mode: replicated
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 10s
+        order: start-first
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+      resources:
+        limits:
+          memory: 2G
+    networks:
+      - qtk-internal
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: d3v123!23
+      POSTGRES_DB: postgres
+    volumes:
+      - strapi-data:/var/lib/postgresql/data/
+
 networks:
-  traefik-net:
+  qtk-internal:
+    driver: overlay
+    attachable: true
+    internal: true
+  traefik-public:
     external: true
+
+volumes:
+  strapi-data:
